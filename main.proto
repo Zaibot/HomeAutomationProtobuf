@@ -1,0 +1,33 @@
+package net.zaibot.homeautomation;
+
+message Endpoint {
+  required string device = 1;
+}
+
+message EventEmit {
+  required Endpoint endpoint = 1;
+  optional long time = 2;
+  required string type = 3;
+  required string value = 4;
+}
+
+message EventReceive {
+  required Endpoint endpoint = 1;
+  required long time = 2;
+  required string type = 3;
+  required string value = 4;
+}
+
+message AssignEmit {
+  required Endpoint endpoint = 1;
+  optional long time = 2;
+  required string type = 3;
+  required string value = 4;
+}
+
+message AssignReceive {
+  required Endpoint endpoint = 1;
+  required long time = 2;
+  required string type = 3;
+  required string value = 4;
+}
