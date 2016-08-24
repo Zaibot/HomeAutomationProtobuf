@@ -1,5 +1,7 @@
 package net.zaibot.homeautomation;
 
+import "nanopb.proto";
+
 message Message {
   oneof msg {
     EventEmit eventEmit = 1;
@@ -10,33 +12,33 @@ message Message {
 }
 
 message Endpoint {
-  required string device = 1;
+  required string device = 1 [(nanopb).max_size = 32];
 }
 
 message EventEmit {
   required Endpoint endpoint = 1;
   optional int64 time = 2;
-  required string type = 3;
-  required string value = 4;
+  required string type = 3 [(nanopb).max_size = 32];
+  required string value = 4 [(nanopb).max_size = 64];
 }
 
 message EventReceive {
   required Endpoint endpoint = 1;
   required int64 time = 2;
-  required string type = 3;
-  required string value = 4;
+  required string type = 3 [(nanopb).max_size = 32];
+  required string value = 4 [(nanopb).max_size = 64];
 }
 
 message AssignEmit {
   required Endpoint endpoint = 1;
   optional int64 time = 2;
-  required string type = 3;
-  required string value = 4;
+  required string type = 3 [(nanopb).max_size = 32];
+  required string value = 4 [(nanopb).max_size = 64];
 }
 
 message AssignReceive {
   required Endpoint endpoint = 1;
   required int64 time = 2;
-  required string type = 3;
-  required string value = 4;
+  required string type = 3 [(nanopb).max_size = 32];
+  required string value = 4 [(nanopb).max_size = 64];
 }
