@@ -12,7 +12,7 @@ message Message {
 }
 
 message Endpoint {
-  required string device = 1 [(nanopb).max_size = 32];
+  required string device = 1 [(nanopb).max_size = 64];
 }
 
 message EventEmit {
